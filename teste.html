@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doc</title>
+</head>
+<h1> km jn</h1>
+<body>
+    <button type="button"
+    onclick="document.getElementById('demo').innerHTML = Date()">
+    Click me to display Date and Time.</button>
+    
+    <p id="demo"></p>
+    
+    <p>Enter a number and click OK:</p>
+
+<input id="id1" type="number" min="100" max="300" required>
+<button onclick="myFunction()">OK</button>
+
+<p>If the number is less than 100 or greater than 300, an error message will be displayed.</p>
+
+<p id="demo"></p>
+<html>
+
+    <head>
+
+        <title>Sistema de Upload com Firebase</title>
+
+    </head>
+
+    <body>
+
+
+
+    <form method="post">
+
+        <input type="file" name="arquivo" />
+
+        <progress value="0"></progress>
+
+    </form>
+
+
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+
+<script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
+
+
+
+<script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-storage.js"></script>
+
+
+<script>
+
+  // Your web app's Firebase configuration
+
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+
+  var firebaseConfig = {
+
+   
+
+  };
+
+  // Initialize Firebase
+
+  firebase.initializeApp(firebaseConfig);
+
+</script>
+
+    <script>
+
+        
+
+        //Upload de arquivos.
+
+
+
+        const storage = firebase.storage();
+
+
+
+        const input = document.querySelector('input[type=file]');
+
+
+
+        input.addEventListener('change',(e)=>{
+
+            let file = e.target.files[0];
+
+
+
+            const uploadTask = storage.ref(`images/${e.target.files[0].name}`)
+
+            .put(e.target.files[0]);
+
+
+
+            uploadTask.on("state_changed",function(snapshot){
+
+
+
+                let progress = (snapshot.bytesTransferred/snapshot.totalBytes) * 1;
+
+
+
+                document.querySelector('progress').value = progress;
+
+
+
+            },function(error){},function(){
+
+                console.log('upload realizado com sucesso');
+
+            })
+
+
+
+        });
+
+
+
+
+
+    </script>
+
+
+
+
+
+    </body>
+
+</html>
+<script>
+function myFunction() {
+  var inpObj = document.getElementById("id1");
+  if (!inpObj.checkValidity()) {
+    document.getElementById("demo").innerHTML = inpObj.validationMessage;
+  } else {
+    document.getElementById("demo").innerHTML = "Input OK";
+  } 
+} 
+</script>
+  <script>
+      console.log 
+      window.alert ("plinio"):
+var
+
+
+
+
+    
+  </script>
+</body>
+</html>
